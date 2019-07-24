@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import Quirk from "../Quirk";
 
 class Form extends Component {
-    state = {
-        name: "Tassa",
-        chatline: "",
-        prefix: "",
-        suffix: "",
-        previous: "",
-        current: "",
-        pesterlog: [], 
-        quirks: []
-    };
+    constructor(props) {
+        super(props);
+        const quirkMap = new Map();
+        this.state = {
+            chatline: "",
+            prefix: "",
+            suffix: "",
+            previous: "",
+            current: "",
+            pesterlog: [], 
+            quirks: quirkMap
+        };
+    }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -33,7 +36,8 @@ class Form extends Component {
         console.log(newQuirk);
         //(TO-DO) validate if quirk can run -- we'll save it even if it's just 'in progress'
         const quirks = this.state.quirks;
-        quirks.push(newQuirk);
+        quirks.set(newQuirk.name, newQuirk);
+        //(TO-DO) error handling if we have the same name
         this.setState({ quirks });
     }
 
@@ -50,7 +54,7 @@ class Form extends Component {
             <div>
                 <h2>Customize your quirk and then type in the magic box below!</h2>
                 <div>
-                    {this.state.quirks.map((quirk, index)=><button key={index}>{quirk.name}</button>)}
+                    {this.state.quirks.forEach((value, key)=>"Test")}
                 </div>
                 <Quirk onClick={this.saveQuirk}/>   
                 <label htmlFor="chatline">UK:</label>
