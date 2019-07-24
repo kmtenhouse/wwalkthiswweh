@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Quirk from "../Quirk";
 
 class Form extends Component {
     state = {
@@ -8,7 +9,8 @@ class Form extends Component {
         suffix: "",
         previous: "",
         current: "",
-        pesterlog: []
+        pesterlog: [], 
+        quirks: []
     };
 
     handleInputChange = event => {
@@ -26,6 +28,15 @@ class Form extends Component {
         }
     }
 
+    saveQuirk = (newQuirk) => {
+        console.log("Created a quirk!");
+        console.log(newQuirk);
+        //(TO-DO) validate if quirk can run -- we'll save it even if it's just 'in progress'
+        const quirks = this.state.quirks;
+        quirks.push(newQuirk);
+        this.setState({ quirks });
+    }
+
     renderQuirk = (str) => {
         const replaceRegexp = new RegExp(this.state.previous, "g");
         if (this.state.previous !== "") {
@@ -38,17 +49,11 @@ class Form extends Component {
         return (
             <div>
                 <h2>Customize your quirk and then type in the magic box below!</h2>
-                <label htmlFor="prefix">Prefix:</label>
-                <input name="prefix" value={this.state.prefix} onChange={this.handleInputChange} />
-                <label htmlFor="suffix">Suffix:</label>
-                <input name="suffix" value={this.state.suffix} onChange={this.handleInputChange} />
-                <br />
-                <label htmlFor="replace">Replace:</label>
-                <input name="previous" value={this.state.previous} onChange={this.handleInputChange} />
-                <label htmlFor="replace">With:</label>
-                <input name="current" value={this.state.current} onChange={this.handleInputChange} />
-                <br />
-                <label htmlFor="chatline">chatline:</label>
+                <div>
+                    {this.state.quirks.map((quirk, index)=><button key={index}>{quirk.name}</button>)}
+                </div>
+                <Quirk onClick={this.saveQuirk}/>   
+                <label htmlFor="chatline">UK:</label>
                 <input name="chatline" value={this.state.chatline} onKeyUp={this.handleKeyUp} onChange={this.handleInputChange} />
                 <p>{(this.state.chatline ? this.renderQuirk(this.state.chatline) : "")}</p>
                 {this.state.pesterlog.map((line, index) => {
