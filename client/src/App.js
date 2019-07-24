@@ -6,18 +6,21 @@ import Chumproll from './components/Chumproll';
 import Chatbox from './components/Chatbox';
 import TrollianContainer from './components/TrollianContainer';
 import TrollianWindow from './components/TrollianWindow';
+import TrollianBody from './components/TrollianBody';
 
 
 function App() {
   return (
     <div className="App">
-      <TrollianHeader />
       <TrollianContainer>
-        <Chumproll />
-        <TrollianWindow>
-          <Pesterlog />
-          <Chatbox />
-        </TrollianWindow>
+        <TrollianHeader />
+        <TrollianBody>
+          <TrollianWindow>
+            <Pesterlog />
+            <Chatbox />
+          </TrollianWindow>
+          <Chumproll />
+        </TrollianBody>
       </TrollianContainer>
     </div>
   );
