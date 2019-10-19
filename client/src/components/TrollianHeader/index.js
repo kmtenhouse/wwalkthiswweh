@@ -5,11 +5,11 @@ import styled from "styled-components";
 
 function TrollianHeader() {
     const Banner = styled.div`
-    background-color: #d60006;
     margin: 0;
-    padding: 0;
-    border: 0;
-    height: 100%;
+	padding: 0;
+	border: 0;
+    vertical-align: baseline;
+    background-color: #d60006;
     display: flex;
     justify-content: space-between`;
 
