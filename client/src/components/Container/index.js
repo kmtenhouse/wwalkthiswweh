@@ -15,7 +15,6 @@ function Container(props) {
 	font-size: 100%;
 	font: inherit;
   vertical-align: baseline;
-  width: 100%; 
   ${bgColor || ""}
   ${display || ""}
   ${justifyContent || ""}
