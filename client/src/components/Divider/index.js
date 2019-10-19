@@ -15,7 +15,7 @@ function Divider(props) {
         direction=`
         width: 100%;
         height: ${thickness};`;
-    } else if (props.direction==="vertical") {
+    } else if (props.direction === "vertical") {
         direction=`
         width: ${thickness};
         height: 100%;`;
