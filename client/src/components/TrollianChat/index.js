@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import TrollianWindowUI from "../../components/TrollianWindowUI";
 import Form from "../Form";
+import ChatMessages from "../ChatMessages";
 
 function TrollianChat(props) {
 
@@ -35,35 +36,24 @@ function TrollianChat(props) {
         border-bottom-left-radius: 6px;
     `;
 
-    const ChatContainer = styled.div`
-        border: 2px solid #c2c2c2;
-        border-left: none;
-        border-bottom-right-radius: 6px;
-        border-top-right-radius: 6px;
-        margin: 0.5em 0.5em 1em 0;
-        background-color: white;
-    `;
-
     const BottomBar = styled.div`
         background-color: #b2b2b2;
         `;
 
+    const test = [{ character: "CG", message: "Are we good?" }, { character: "TA", message: "Seriously bro" }];
+
     return (
         <TrollianWindowUI backgroundColor="#797979">
             <GrayInnerWrapper>
-            <Wrapper>
-                <Header>
-                    <HeaderText>Bulletin Board: TEAM ADORABLOODTHIRSTY.</HeaderText>
-                </Header>
-
-                <ChatContainer>
-                    <p>Are we really good with this</p>
-                    <p>Are we really good with this</p>
-                </ChatContainer>
-            </Wrapper>
-            <BottomBar>
-                <Form />
-            </BottomBar>
+                <Wrapper>
+                    <Header>
+                        <HeaderText>Bulletin Board: TEAM ADORABLOODTHIRSTY.</HeaderText>
+                    </Header>
+                    <ChatMessages messages={test} />
+                </Wrapper>
+                <BottomBar>
+                    <Form />
+                </BottomBar>
             </GrayInnerWrapper>
         </TrollianWindowUI>
     );
