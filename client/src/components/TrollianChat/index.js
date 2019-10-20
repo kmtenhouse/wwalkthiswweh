@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import TrollianWindowUI from "../../components/TrollianWindowUI";
-import MessageInput from "../../components/MessageInput";
+import Form from "../Form";
 
 function TrollianChat(props) {
 
@@ -17,6 +17,31 @@ function TrollianChat(props) {
         font-family: Courier;
         font-weight: normal;
         color: white;
+        border: 2px solid #c2c2c2;
+        border-left: none;
+        border-right: none;
+    `;
+
+    const GrayInnerWrapper = styled.div`
+        border: 2px solid #c2c2c2;
+        border-top: none;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    `;
+
+    const Wrapper = styled.div`
+        margin-left: 0.5em;
+        border-left: 2px solid #c2c2c2;
+        border-bottom-left-radius: 6px;
+    `;
+
+    const ChatContainer = styled.div`
+        border: 2px solid #c2c2c2;
+        border-left: none;
+        border-bottom-right-radius: 6px;
+        border-top-right-radius: 6px;
+        margin: 0.5em 0.5em 1em 0;
+        background-color: white;
     `;
 
     const BottomBar = styled.div`
@@ -25,18 +50,21 @@ function TrollianChat(props) {
 
     return (
         <TrollianWindowUI backgroundColor="#797979">
-            <Header>
-                <HeaderText>Bulletin Board: TEAM ADORABLOODTHIRSTY</HeaderText>
-            </Header>
-            <p>Are we really good with this</p>
-            <p>Are we really good with this</p>
+            <GrayInnerWrapper>
+            <Wrapper>
+                <Header>
+                    <HeaderText>Bulletin Board: TEAM ADORABLOODTHIRSTY.</HeaderText>
+                </Header>
+
+                <ChatContainer>
+                    <p>Are we really good with this</p>
+                    <p>Are we really good with this</p>
+                </ChatContainer>
+            </Wrapper>
             <BottomBar>
-                <select>
-                    <option>CG</option>
-                    <option>TA</option>
-                </select>
-                <input type="text" />
+                <Form />
             </BottomBar>
+            </GrayInnerWrapper>
         </TrollianWindowUI>
     );
 
