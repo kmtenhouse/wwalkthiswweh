@@ -27,16 +27,17 @@ class Form extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        if(this.props.getNewMessage) {
-            this.props.getNewMessage(this.state.speaker, this.state.incomingMessage);
+        const currentSpeaker = this.state.speaker;
+        const currentMsg = this.state.incomingMessage;
+        if (this.props.getNewMessage) {
+            this.props.getNewMessage(currentSpeaker, currentMsg);
         }
-        this.setState({ incomingMessage: "" });
+        this.setState({ speaker: currentSpeaker, incomingMessage: "" });
     };
-
 
     render() {
         return (
-            <InlineForm onSubmit={this.handleSubmit}> 
+            <InlineForm onSubmit={this.handleSubmit}>
                 <select name="speaker" value={this.state.speaker} onChange={this.handleInputChange}>
                     <option>AA</option>
                     <option>AT</option>
@@ -51,7 +52,7 @@ class Form extends React.Component {
                     <option>CA</option>
                     <option>CC</option>
                 </select>
-                <LongInput type="text" name="incomingMessage" value={this.state.incomingMessage} onChange={this.handleInputChange} />
+                <LongInput type="text" name="incomingMessage" value={this.state.incomingMessage} onChange={this.handleInputChange} /* autoFocus={true} */ />
             </InlineForm>
         );
     }

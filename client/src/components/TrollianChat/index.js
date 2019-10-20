@@ -4,6 +4,7 @@ import TrollianWindowUI from "../../components/TrollianWindowUI";
 import Form from "../Form";
 import ChatMessages from "../ChatMessages";
 
+//Fixed styles here
 const Header = styled.div`
 background-color: #ff2612;
 color: white;
@@ -38,8 +39,6 @@ const BottomBar = styled.div`
 background-color: #b2b2b2;
 `;
 
-
-
 class TrollianChat extends React.Component {
 
     constructor(props) {
@@ -52,7 +51,7 @@ class TrollianChat extends React.Component {
     getNewMessage = (speaker, message) => {
         //we have received a new message!  push it to the array and set state
         const allMessages = this.state.messages;
-        //if we are over 50 messages, start truncating
+        //if we are over 50 messages, start truncating the older things
         if(allMessages.length > 50) {
             allMessages.shift();
         }

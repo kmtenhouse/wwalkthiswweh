@@ -4,8 +4,8 @@ import quirkify from "../../utilities/quirks";
 
 function getColor(character) {
     const colorMap = {
-        "AA": "a10000",
-        "AT": "a25203",
+        "AA": "#a10000",
+        "AT": "#a25203",
         "TA": "#a1a100",
         "CG": "#626262",
         "AC": "#336601",
