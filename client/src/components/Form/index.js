@@ -13,8 +13,18 @@ function Form(props) {
     return (
         <InlineForm>
             <select name="speaker">
-                <option>CG</option>
+                <option>AA</option>
+                <option>AT</option>
                 <option>TA</option>
+                <option>CG</option>
+                <option>AC</option>
+                <option>GA</option>
+                <option>GC</option>
+                <option>AG</option>
+                <option>CT</option>
+                <option>TC</option>
+                <option>CA</option>
+                <option>CC</option>
             </select>
             <LongInput type="text" name="message" value={props.message} />
         </InlineForm>

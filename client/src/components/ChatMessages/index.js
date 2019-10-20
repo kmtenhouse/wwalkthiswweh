@@ -3,8 +3,18 @@ import styled from "styled-components";
 
 function getColor(character) {
     const colorMap = {
+        "AA": "a10000",
+        "AT": "a25203",
         "TA": "#a1a100",
-        "CG": "#626262"
+        "CG": "#626262",
+        "AC": "#336601",
+        "GA": "#078446",
+        "GC": "#008282",
+        "AG": "#004182",
+        "CT": "#0021cb",
+        "TC": "#440a7f",
+        "CA": "#6a006a",
+        "CC": "#99004d"
     };
     
     return (colorMap[character] || "#000000");
