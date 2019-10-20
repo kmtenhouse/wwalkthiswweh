@@ -12,10 +12,12 @@ function App() {
     <Container height="100vh" display="flex" flexDirection="column">
       <TrollianHeader />
       <Container flex="1" display="flex" justifyContent="space-between">
-        <TrollianChat />
+        <Container width="100%">
+          <TrollianChat />
+        </Container>
         <ChumpRoll />
       </Container>
-      <Divider direction="horizontal" bodyColor="#ff5f84" borderColor="#c2c2c2" suppressBorder="lr" />
+      <Divider direction="horizontal" bodyColor="#b2b2b2" bodyThickness="0.75em" borderColor="#a0a0a0" suppressBorder="lr" />
     </Container>
   );
 }

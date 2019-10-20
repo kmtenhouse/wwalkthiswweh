@@ -10,7 +10,7 @@ function Divider(props) {
     //(so if we don't provide one, return "")
     //THICKNESS is optional -- defaults to 0.5em
     let direction;
-    let thickness = props.thickness || "0.5em";
+    let thickness = props.bodyThickness || "0.5em";
     if(props.direction === "horizontal") {
         direction=`
         width: 100%;
