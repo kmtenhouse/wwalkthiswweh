@@ -40,7 +40,7 @@ function TrollianChat(props) {
         background-color: #b2b2b2;
         `;
 
-    const test = [{ character: "CG", message: "Are we good?" }, { character: "TA", message: "Seriously bro" }];
+    const test = [{ character: "CG", message: "Are we good?" }, { character: "TA", message: "Seriously are we even doing this." }, { character: "AC", message: "Purrfect!"}];
 
     return (
         <TrollianWindowUI backgroundColor="#797979">

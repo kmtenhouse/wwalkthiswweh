@@ -26,6 +26,7 @@ function createMessage(obj) {
     
     const FormattedLi = styled.li`
     padding: 0.25em 0;
+    font-family: Courier;
     color: ${getColor(obj.character)}
     `;
     //returns a list item with the correct formatting for this character
