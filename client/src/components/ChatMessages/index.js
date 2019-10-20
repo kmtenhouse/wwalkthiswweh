@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import quirkify from "../../utilities/quirks";
 
 function getColor(character) {
     const colorMap = {
@@ -20,7 +21,7 @@ function getColor(character) {
     return (colorMap[character] || "#000000");
 }
 
-function createMessage(obj) {
+function createMessage(obj, index) {
     //takes in a message object 
     //expected properties: the character who is speaking
     
@@ -31,8 +32,8 @@ function createMessage(obj) {
     `;
     //returns a list item with the correct formatting for this character
     return (
-        <FormattedLi>
-            {obj.character}: {obj.message}
+        <FormattedLi key={index}> 
+            {obj.character}: {quirkify(obj.character, obj.message)}
         </FormattedLi>
     );
 }
@@ -56,7 +57,7 @@ function ChatMessages(props) {
     `;
 
     const { messages } = props;
-    const formattedMessages = messages.map(obj => createMessage(obj));
+    const formattedMessages = messages.map( (obj, index) => createMessage(obj, index));
 
     return (
         <ChatContainer>

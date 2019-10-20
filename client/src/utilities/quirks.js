@@ -28,7 +28,7 @@ function getQuirk(character) {
             typingQuirk.setSentenceCase("uppercase");
             break;
         case "AC":
-            typingQuirk.addPrefix(":33 <");
+            typingQuirk.setPrefix(":33 < ");
             typingQuirk.addSubstitution(
                 {
                     patternToMatch: /3{2}/g,
@@ -59,7 +59,7 @@ function getQuirk(character) {
             typingQuirk.addSubstitution("loo", "100", { ignoreCase: true });
             typingQuirk.addSubstitution("ool", "001", { ignoreCase: true });
             typingQuirk.addSubstitution("x", "%", { ignoreCase: true });
-            typingQuirk.addPrefix("D -->");
+            typingQuirk.setPrefix("D --> ");
             break;
         case "TC":
             typingQuirk.setSentenceCase("alternatingcaps");
