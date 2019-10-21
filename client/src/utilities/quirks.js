@@ -57,10 +57,13 @@ function getQuirk(character) {
             typingQuirk.addSubstitution("strong", "STRONG", { ignoreCase: true });
             typingQuirk.addSubstitution("strength", "STRONGNESS", { ignoreCase: true });
             typingQuirk.addSubstitution("cross", "%");
+            typingQuirk.addSubstitution("lue", "100", { ignoreCase: true });
+            typingQuirk.addSubstitution("lew", "100", { ignoreCase: true });
             typingQuirk.addSubstitution("loo", "100", { ignoreCase: true });
             typingQuirk.addSubstitution("ool", "001", { ignoreCase: true });
             typingQuirk.addSubstitution("x", "%", { ignoreCase: true });
             typingQuirk.setPrefix("D --> ");
+            typingQuirk.setSentenceCase("propercase");
             break;
         case "TC":
             typingQuirk.setSentenceCase("alternatingcaps");
