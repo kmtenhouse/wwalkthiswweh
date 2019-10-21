@@ -29,6 +29,8 @@ function getQuirk(character) {
             break;
         case "AC":
             typingQuirk.setPrefix(":33 < ");
+            typingQuirk.addStripPattern("'");
+            typingQuirk.setSentenceCase("lowercase");
             typingQuirk.addSubstitution(
                 {
                     patternToMatch: /3{2}/g,
@@ -42,6 +44,8 @@ function getQuirk(character) {
             break;
         case "GA":
             typingQuirk.setWordCase("capitalize");
+            typingQuirk.addStripPattern("'");
+            //remove punctuation
             break;
         case "GC":
             typingQuirk.addSubstitution("a", "4", { ignoreCase: true });
@@ -52,6 +56,13 @@ function getQuirk(character) {
             break;
         case "AG":
             typingQuirk.addSubstitution("b", "8", { ignoreCase: true });
+            typingQuirk.addSubstitution("ait", "8", { ignoreCase: true });
+            typingQuirk.addSubstitution("ate", "8", { ignoreCase: true }); 
+            typingQuirk.addSubstitution("eight", "8", { ignoreCase: true }); 
+            typingQuirk.addEmoji("::::)");
+            typingQuirk.addEmoji("::::(");
+            typingQuirk.addEmoji("D::::");
+            typingQuirk.setSentenceCase("propercase");
             break;
         case "CT":
             typingQuirk.addSubstitution("strong", "STRONG", { ignoreCase: true });
@@ -69,9 +80,11 @@ function getQuirk(character) {
             typingQuirk.setSentenceCase("alternatingcaps");
             typingQuirk.addEmoji(":o)");
             typingQuirk.addEmoji("(o:");
+            typingQuirk.addEmoji(":O)");
+            typingQuirk.addEmoji("(O:");
             break;
         case "CA":
-            typingQuirk.addWordException("thing");
+            typingQuirk.addWordException("thing"); //thing becomes 'thin' which is wrong lol
             typingQuirk.addSubstitution("w", "ww", { ignoreCase: true });
             typingQuirk.addSubstitution("v", "vv", { ignoreCase: true });
             typingQuirk.addSubstitution(
@@ -85,9 +98,11 @@ function getQuirk(character) {
                 }
             );
             typingQuirk.addStripPattern("'");
+            //remove all punctuation
             typingQuirk.setSentenceCase("lowercase");
             break;
         case "CC":
+            typingQuirk.setSentenceCase("propercase");
             typingQuirk.addSubstitution("h", ")(");
             typingQuirk.addSubstitution("E", "-E");
             typingQuirk.addEmoji("38)");
