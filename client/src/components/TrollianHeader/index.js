@@ -15,8 +15,8 @@ function TrollianHeader() {
 
     return (
         <Banner>
-            <img src={leftImg} />
-            <img src={rightImg} /> 
+            <img src={leftImg} alt="Trollian" />
+            <img src={rightImg} alt="Trollian" /> 
         </Banner>
     );
 }

@@ -41,13 +41,14 @@ function getQuirk(character) {
             );
             break;
         case "GA":
+            typingQuirk.setWordCase("capitalize");
+            break;
+        case "GC":
             typingQuirk.addSubstitution("a", "4", { ignoreCase: true });
             typingQuirk.addSubstitution("e", "3", { ignoreCase: true });
             typingQuirk.addSubstitution("i", "1", { ignoreCase: true });
             typingQuirk.addEmoji(">:]");
-            break;
-        case "GC":
-            typingQuirk.setWordCase("capitalize");
+            typingQuirk.setSentenceCase("uppercase");
             break;
         case "AG":
             typingQuirk.addSubstitution("b", "8", { ignoreCase: true });
@@ -67,6 +68,7 @@ function getQuirk(character) {
             typingQuirk.addEmoji("(o:");
             break;
         case "CA":
+            typingQuirk.addWordException("thing");
             typingQuirk.addSubstitution("w", "ww", { ignoreCase: true });
             typingQuirk.addSubstitution("v", "vv", { ignoreCase: true });
             typingQuirk.addSubstitution(
